@@ -1,7 +1,7 @@
 @layer theme, base, mui, components, utilities;
 @import 'tailwindcss';
 
-@theme {
+@theme inline {
   --color-blue-primary: #025FCA;
   --color-rose-primary: #ED2049;
   --color-rose-secondary: #FF5F85;
@@ -12,7 +12,10 @@
   --color-gray-disabled: #919EAB;
   --color-orange-primary: #FFA446;
   --color-green-primary: #51BCB7;
+  --color-brand-100: #CDE4FE;
+  --color-brand-600: #025FCA;
   --color-brand-700: #024897;
+  --color-brand-800: #013065;
   
   --spacing-primary: 15px;
   --border-radius-primary: 8px;
