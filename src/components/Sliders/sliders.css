@@ -1,10 +1,18 @@
 .slick-prev , .slick-next{
-    width: 40px;
-    height: 40px;
-    z-index: 2 !important;
-    font-size: 24px !important;
-   
-    &::before{
-        content: none;
-    }
+  width: 40px;
+  height: 40px;
+  z-index: 2 !important;
+  font-size: 24px !important;
+  
+  &::before{
+      content: none;
+  }
+}
+
+.slick-prev {
+  left: -15px!important
+}
+
+.slick-next {
+  right: -15px!important
 }

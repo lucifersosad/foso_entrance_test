@@ -43,9 +43,7 @@ function Sliders(props: any) {
   };
 
   return (
-    <div className="slider-container p-[48px]">
-      <Slider {...DEFAULT_SETTINGS}>{custom}</Slider>
-    </div>
+    <Slider {...DEFAULT_SETTINGS}>{custom}</Slider>
   );
 }
 
