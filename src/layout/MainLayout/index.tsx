@@ -12,7 +12,9 @@ export default function MainLayout({ children }: { children: ReactNode}) {
   return (
     <>
       <Header />
-      {children}
+      <main className='bg-[#F4F6F8]'>
+        {children}
+      </main>
       <Footer />
     </>
   );

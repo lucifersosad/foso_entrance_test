@@ -121,6 +121,17 @@ const theme = createTheme({
       textTransform: 'none',
     },
   },
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          '@media (min-width: 1200px)': {
+            maxWidth: '1440px',
+          },
+        },
+      },
+    },
+  },
 });
 
 export default theme;
