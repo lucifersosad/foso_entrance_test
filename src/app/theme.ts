@@ -76,7 +76,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'var(--font-roboto)',
+    fontFamily: 'var(--font-epilogue)',
     h1: {
       fontSize: '2.5rem',
       fontWeight: 700,

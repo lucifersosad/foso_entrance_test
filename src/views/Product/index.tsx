@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Breadcrumbs, Container, Link, Typography } from "@mui/material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
@@ -39,11 +41,11 @@ export default function ProductsPage() {
                         <Box className="min-h-[200px] bg-white rounded-[8px]">
                           <Box sx={{p: 1}}>
                             <div className="relative w-full aspect-square">
-                              <Image src={"/image/product-1.png"} alt="product-1" fill objectFit="cover"/>
+                              <Image src={"/image/product-1.png"} alt="product-1" fill />
                             </div>
                           </Box>
                           <Box sx={{px: 3}}>
-                            <Typography className="text-sm">Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)</Typography>
+                            <Typography className="typography-subtitle2">Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)</Typography>
                           </Box>
                         </Box>
                       </div>
