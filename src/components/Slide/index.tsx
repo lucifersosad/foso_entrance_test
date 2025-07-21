@@ -33,7 +33,6 @@ function SlickArrowRight({ currentSlide, slideCount, ...props }: any) {
 
 const DEFAULT_SETTINGS = {
     infinite: true,
-    dots: true,
     slidesToShow: 5,
     slidesToScroll: 2,
     prevArrow: <SlickArrowLeft />,

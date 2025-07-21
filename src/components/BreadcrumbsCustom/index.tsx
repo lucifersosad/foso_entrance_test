@@ -2,6 +2,7 @@
 
 import { Box, Breadcrumbs, Link } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { memo } from "react";
 
 const breadcrumbs = [
   <Link underline="hover" key="1" color="inherit" href="/" onClick={() => {}} className="text-gray-disabled font-normal">
@@ -12,7 +13,7 @@ const breadcrumbs = [
   </Link>,
 ];
 
-const CustomBreadcrumbs = () => {
+const BreadcrumbsCustom = () => {
   return (
     <Box sx={{ pt: 3, pb: 4 }}>
       <Breadcrumbs
@@ -24,4 +25,4 @@ const CustomBreadcrumbs = () => {
     </Box>
   );
 };
-export default CustomBreadcrumbs;
+export default memo(BreadcrumbsCustom);

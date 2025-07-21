@@ -1,8 +1,11 @@
+"use client"
+
 import { Box, Button, Chip, Stack, Typography } from "@mui/material"
 import Image from "next/image"
 import { IconFire } from "@/components/Icons"
 import Slide from "@/components/Slide"
-import { formatMoney } from "@/utils/helper/format"
+import { memo } from "react"
+import { formatMoney } from "@/lib/format"
 
 const ProductSlide = () => {
   return (
@@ -43,4 +46,5 @@ const ProductSlide = () => {
     </div>
   )
 }
-export default ProductSlide
+// const Product
+export default memo(ProductSlide)

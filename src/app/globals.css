@@ -14,6 +14,7 @@
   --color-green-primary: #51BCB7;
   --color-brand-50: #E6F1FF;
   --color-brand-100: #CDE4FE;
+  --color-brand-500: #0373F3;
   --color-brand-600: #025FCA;
   --color-brand-700: #024897;
   --color-brand-800: #013065;
@@ -30,9 +31,9 @@
   --color-card-foreground: 222.2 84% 4.9%;
   --color-popover: 0 0% 100%;
   --color-popover-foreground: 222.2 84% 4.9%;
-  --color-primary: 221.2 83.2% 53.3%;
+  --color-primary: #1C252E;
   --color-primary-foreground: 210 40% 98%;
-  --color-secondary: 210 40% 96%;
+  --color-secondary: #637381;
   --color-secondary-foreground: 222.2 84% 4.9%;
   --color-muted: 210 40% 96%;
   --color-muted-foreground: 215.4 16.3% 46.9%;
