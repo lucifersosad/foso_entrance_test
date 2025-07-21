@@ -12,7 +12,7 @@ import ProductFilters from "./ProductFilters";
 import ProductMain from "./ProductMain";
 
 const initialFilter = {
-    categories: ['air_filter', 'fuel_filter', 'petrol_filter'],
+    categories: ['air_filter', 'fuel_filter', 'oil_filter'],
     price: '',
     brands: [],
     years: [],
