@@ -1,3 +1,5 @@
+"use client"
+
 import ToggleButton from "@/components/ToggleButton";
 import { SORT } from "@/lib/contants";
 import { Box, Grid, Stack, Typography } from "@mui/material";

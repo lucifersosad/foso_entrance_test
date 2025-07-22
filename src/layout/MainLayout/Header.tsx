@@ -11,6 +11,7 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import { Camera, Cart, IconFastShipping, IconFreeDelivery, IconRefund, IconSupport, Search, User, Vietnam } from '@/components/Icons';
+import SelectCategory from '@/components/SelectCategory';
 
 const Header = () => {
   return (
@@ -65,12 +66,13 @@ const Header = () => {
 
         <Box sx={{mt: 3, mb: 2}}>
           <Stack direction="row" spacing={3} alignItems="center">
-            <Button 
+            {/* <Button 
               className="font-medium text-white bg-[#0155C6] hover:opacity-90 flex items-center"
               endIcon={<KeyboardArrowDownIcon />}
             >
               ☰ Danh Mục Sản Phẩm
-            </Button>
+            </Button> */}
+            <SelectCategory />
             <Stack direction="row" justifyContent={"space-between"} alignItems={"center"} className='flex-1'>
               <Stack direction="row" spacing={2.5} alignItems={"center"}>
                 <Button className="text-gray-600 hover:text-blue-600 normal-case">
