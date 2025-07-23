@@ -21,6 +21,11 @@ const epilogue = Epilogue({
   variable: '--font-epilogue',
 })
 
+export const metadata: Metadata = {
+  title: 'Sunfil1',
+  description: "Sunfil1",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
