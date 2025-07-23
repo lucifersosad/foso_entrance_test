@@ -9,7 +9,7 @@ import { formatMoney } from "@/lib/format";
 
 const ProductFilters = ({ filter, setFilter }: any) => {
 
-  const handleFilter = (type: any, params: string, rating: any) => {
+  const handleFilter = (type: any, params: string) => {
     switch (type) {
       case 'categories':
         if (filter.categories.some((item: any) => item === params)) {
@@ -58,7 +58,9 @@ const ProductFilters = ({ filter, setFilter }: any) => {
         background: '#fff',
         borderRadius: 2,
         boxShadow: 'none',
-        width: {xs: '100%', md: '315px'}
+        width: {xs: '100%', md: '315px'},
+        minWidth: '315px',
+        height: 'fit-content'
       }} 
       className=" mr-5 py-3 flex flex-col gap-1"
       title=""
@@ -92,11 +94,6 @@ const ProductFilters = ({ filter, setFilter }: any) => {
 export default memo(ProductFilters);
 
 function Categories({ categories, handleFilter }: any) {
-  const [isCategoriesLoading, setCategoriesLoading] = useState(true);
-  useEffect(() => {
-    setCategoriesLoading(false);
-  }, []);
-
   return (
     <Box sx={{ pl: 0.5 }}>
       <Stack>

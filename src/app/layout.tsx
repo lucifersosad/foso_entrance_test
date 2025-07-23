@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
 import "./globals.css";
 import MainLayout from '@/layout/MainLayout';
+import ReactQueryProvider from './ReactQueryProvider';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -27,12 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning className={epilogue.variable}>
-      <body className="font-epilogue bg-white">
+      <body className="font-epilogue bg-white relative">
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
-            <MainLayout>
-              {children}
-            </MainLayout>
+            <ReactQueryProvider>
+              <MainLayout>
+                {children}
+              </MainLayout>
+            </ReactQueryProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
