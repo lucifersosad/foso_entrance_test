@@ -58,8 +58,9 @@ const ProductFilters = ({ filter, setFilter }: any) => {
         background: '#fff',
         borderRadius: 2,
         boxShadow: 'none',
+        width: {xs: '100%', md: '315px'}
       }} 
-      className="max-w-[315px] min-w-[315px] mr-5 py-3 flex flex-col gap-1"
+      className=" mr-5 py-3 flex flex-col gap-1"
       title=""
     >
       <CardHeader className="p-3" title={<Stack direction={"row"} className="gap-3"><IconFilter />Bộ lọc</Stack>} slotProps={{title: {className: "text-brand-500 font-bold text-2xl"}}}/>

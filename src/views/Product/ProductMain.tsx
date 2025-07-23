@@ -2,8 +2,10 @@
 
 import ToggleButton from "@/components/ToggleButton";
 import { SORT } from "@/lib/contants";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ProductCard from "./ProductCard";
+import Link from "next/link";
 
 const ProductMain = ({ sort, setSort }: any) => {
   const handleSort = (value: string) => {
@@ -15,19 +17,20 @@ const ProductMain = ({ sort, setSort }: any) => {
   return (
     <Box sx={{ flex: 1 }}>
       <Stack
-        direction={"row"}
+        direction={{md: 'row', xs: 'column'}}
         justifyContent={"space-between"}
         alignItems={"center"}
-        className="pb-2"
+        // className="pb-2"
+        sx={{pb: 1, mt: {xs: 2, md: 0}}}
       >
         <Typography className="font-semibold text-xl">
           Danh sách sản phẩm
         </Typography>
-        <Stack direction={"row"} spacing={3} alignItems={"center"}>
+        <Stack direction={{md: 'row', xs: 'column'}} spacing={3} alignItems={"center"}>
           <Typography className="text-base leading-[26px] font-medium">
             Sắp xếp theo
           </Typography>
-          <Stack direction={"row"} spacing={1.5}>
+          <Stack direction={{sm: 'row', xs: 'column'}} spacing={1.5} alignItems={"center"}>
             {Object.entries(SORT).map(([key, object]) => (
               <ToggleButton
                 key={key}
@@ -42,6 +45,12 @@ const ProductMain = ({ sort, setSort }: any) => {
                 </Typography>
               </ToggleButton>
             ))}
+            <Button className="btn-outlined">
+              <Typography className="font-medium">
+                Giá: Thấp → Cao
+                <KeyboardArrowDownIcon />
+              </Typography>
+            </Button>
           </Stack>
         </Stack>
       </Stack>

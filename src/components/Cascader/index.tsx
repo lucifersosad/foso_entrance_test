@@ -22,6 +22,8 @@ import {
 } from "@mui/icons-material";
 import Image from "next/image";
 import ProductCard from "@/views/Product/ProductCard";
+import Link from "next/link";
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
 // Interface cho dữ liệu danh mục
 export interface Category {
@@ -351,9 +353,17 @@ const Cascader: React.FC<CascaderProps> = ({
               <Divider className="mt-[28px] mb-[24px]" />
 
               <Box>
-                <Typography className="mb-6 text-2xl font-semibold">
-                  Sản Phẩm Bán Chạy ({selectedParent?.name})
-                </Typography>
+                <Stack direction={'row'} justifyContent={"space-between"} alignItems={'center'} className="mb-6">
+                  <Typography className="text-2xl font-semibold">
+                    Sản Phẩm Bán Chạy ({selectedParent?.name})
+                  </Typography>
+                  <Link href={""}>
+                    <Typography className="text-base font-semibold text-brand-500">
+                      Xem tất cả
+                      <KeyboardDoubleArrowRightIcon />
+                    </Typography>
+                  </Link>
+                </Stack>
                 {/* <Grid container spacing={2}>
                   <Grid size={2.4}>
                     <ProductCard hot={false} button={false} />

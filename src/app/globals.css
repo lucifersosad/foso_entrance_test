@@ -3,6 +3,7 @@
 
 @theme inline {
   --color-blue-primary: #025FCA;
+  --color-yellow-primary: #FACA4A;
   --color-rose-primary: #ED2049;
   --color-rose-secondary: #FF5F85;
   --color-gray-primary: #F5F5F5;
@@ -60,6 +61,18 @@
     font: var(--mui-font-h1);
     letter-spacing: -0.01562em;
   }
+}
+
+@utility btn {
+  @apply text-sm leading-6 font-medium;
+}
+
+@utility btn-outlined {
+  @apply text-primary hover:text-blue-600 normal-case;
+}
+
+@utility btn-icon-outlined {
+  @apply border-none text-primary rounded-full hover:bg-brand-50;
 }
 
 @utility typography-subtitle2 {
