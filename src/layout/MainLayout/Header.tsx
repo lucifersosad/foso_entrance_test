@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <AppBar position="relative" className="bg-white shadow-none">
       {/* Sub header */}
-      <Box sx={{ background: 'linear-gradient(270deg, #0D57C6 0%, #37CFFF 50.39%, #0F5ED6 100%)' }}>
+      <Box sx={{ mb: 3, background: 'linear-gradient(270deg, #0D57C6 0%, #37CFFF 50.39%, #0F5ED6 100%)' }}>
         <Container disableGutters>
           <Box sx={{ px: { xs: 3, lg: 0 } }}>
             <Stack
