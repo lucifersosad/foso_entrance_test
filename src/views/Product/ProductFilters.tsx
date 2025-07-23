@@ -1,7 +1,7 @@
 import { IconFilter } from "@/components/Icons";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Card, CardContent, CardHeader, Checkbox, Divider, FormControl, FormControlLabel, FormGroup, Grid, Skeleton, Stack, Typography } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { memo, useEffect, useState } from "react";
+import { memo, useEffect, useState, useCallback } from "react";
 import AccordionCustom from "@/components/AccordionCustom";
 import ToggleButton from "@/components/ToggleButton";
 import { FILTER_BRAND, FILTER_CATEGORY, FILTER_COUNTRY, FILTER_PRICE, FILTER_YEAR } from "@/lib/contants";
@@ -9,48 +9,54 @@ import { formatMoney } from "@/lib/format";
 
 const ProductFilters = ({ filter, setFilter }: any) => {
 
-  const handleFilter = (type: any, params: string) => {
+  const handleFilter = useCallback((type: any, params: string) => {
     switch (type) {
       case 'categories':
-        if (filter.categories.some((item: any) => item === params)) {
-          setFilter({ ...filter, categories: filter.categories.filter((item: any) => item !== params) });
-        } else {
-          setFilter({ ...filter, categories: [...filter.categories, params] });
-        }
+        setFilter((prevFilter: any) => {
+          if (prevFilter.categories.some((item: any) => item === params)) {
+            return { ...prevFilter, categories: prevFilter.categories.filter((item: any) => item !== params) };
+          } else {
+            return { ...prevFilter, categories: [...prevFilter.categories, params] };
+          }
+        });
         break;
       case 'price':
-        console.log("🚀 ~ handleFilter ~ params:", params)
-        if (filter.price !== params) {
-          setFilter({ ...filter, price: params });
-        } else {
-          setFilter({ ...filter, price: '' });
-        }
+        setFilter((prevFilter: any) => ({
+          ...prevFilter,
+          price: prevFilter.price !== params ? params : ''
+        }));
         break;
       case 'brands':
-        if (filter.brands.some((item: any) => item === params)) {
-          setFilter({ ...filter, brands: filter.brands.filter((item: any) => item !== params) });
-        } else {
-          setFilter({ ...filter, brands: [...filter.brands, params] });
-        }
+        setFilter((prevFilter: any) => {
+          if (prevFilter.brands.some((item: any) => item === params)) {
+            return { ...prevFilter, brands: prevFilter.brands.filter((item: any) => item !== params) };
+          } else {
+            return { ...prevFilter, brands: [...prevFilter.brands, params] };
+          }
+        });
         break;
       case 'years':
-        if (filter.years.some((item: any) => item === params)) {
-          setFilter({ ...filter, years: filter.years.filter((item: any) => item !== params) });
-        } else {
-          setFilter({ ...filter, years: [...filter.years, params] });
-        }
+        setFilter((prevFilter: any) => {
+          if (prevFilter.years.some((item: any) => item === params)) {
+            return { ...prevFilter, years: prevFilter.years.filter((item: any) => item !== params) };
+          } else {
+            return { ...prevFilter, years: [...prevFilter.years, params] };
+          }
+        });
         break;
       case 'countries':
-        if (filter.countries.some((item: any) => item === params)) {
-          setFilter({ ...filter, countries: filter.countries.filter((item: any) => item !== params) });
-        } else {
-          setFilter({ ...filter, countries: [...filter.countries, params] });
-        }
+        setFilter((prevFilter: any) => {
+          if (prevFilter.countries.some((item: any) => item === params)) {
+            return { ...prevFilter, countries: prevFilter.countries.filter((item: any) => item !== params) };
+          } else {
+            return { ...prevFilter, countries: [...prevFilter.countries, params] };
+          }
+        });
         break;
       default:
         break;
     }
-  };
+  }, [setFilter]);
 
   return (
     <Card 

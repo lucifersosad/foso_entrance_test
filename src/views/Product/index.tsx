@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import BreadcrumbsCustom from "@/components/BreadcrumbsCustom";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   IconDeliveryFeatured,
   IconFire,
@@ -41,7 +41,21 @@ export default function ProductsPage() {
   const [filter, setFilter] = useState(initialFilter);
   const [sort, setSort] = useState(initialSort);
 
-  const { data, isLoading, isFetching, error, refetch } = useGetProducts(filter);
+  const memoizedFilter = useMemo(() => ({
+    categories: filter.categories,
+    price: filter.price,
+    brands: filter.brands,
+    years: filter.years,
+    countries: filter.countries,
+  }), [
+    filter.categories.join(','),
+    filter.price,
+    filter.brands.join(','),
+    filter.years.join(','),
+    filter.countries.join(','),
+  ]);
+
+  const { data, isLoading, isFetching, error, refetch } = useGetProducts(memoizedFilter);
 
   const products: Product[] = data?.data || [];
 
