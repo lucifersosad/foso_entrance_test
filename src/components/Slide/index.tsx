@@ -32,12 +32,12 @@ function SlickArrowRight({ currentSlide, slideCount, ...props }: any) {
 }
 
 const DEFAULT_SETTINGS = {
-    infinite: true,
-    slidesToShow: 5,
-    slidesToScroll: 2,
-    prevArrow: <SlickArrowLeft />,
-    nextArrow: <SlickArrowRight />,
-  };
+  infinite: true,
+  slidesToShow: 5,
+  slidesToScroll: 2,
+  prevArrow: <SlickArrowLeft />,
+  nextArrow: <SlickArrowRight />,
+};
 
 function slide(props: any) {
   const { custom, options } = props;

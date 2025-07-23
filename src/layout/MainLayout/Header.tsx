@@ -42,47 +42,39 @@ const Header = () => {
   return (
     <AppBar position="relative" className="bg-white shadow-none">
       {/* Sub header */}
-      <div
-        className="text-white text-center py-1 text-sm mb-6"
-        style={{
-          background:
-            "linear-gradient(270deg, #0D57C6 0%, #37CFFF 50.39%, #0F5ED6 100%)",
-        }}
-      >
-        <Container disableGutters>
-          <Box sx={{ px: { xs: 3, lg: 0 } }}>
-            <Stack
-              direction={"row"}
-              justifyContent={"space-between"}
-              alignItems={"center"}
-            >
-              <Stack direction={"row"} gap={1}>
-                <IconMoneySubHeader />
-                <Typography className="text-sm">
-                  Nhập mã{" "}
-                  <span className="text-yellow-primary font-bold">NEWBIE</span>{" "}
-                  giảm ngay 10% cho lần đầu mua hàng
-                </Typography>
-              </Stack>
-              <Stack spacing={3} direction={"row"}>
-                <Stack direction={"row"} gap={1}>
-                  <IconPhoneSubHeader />
-                  <Typography className="text-sm text-white">
-                    Hotline:{" "}
-                    <span className="text-yellow-primary font-bold text-xs">
-                      0283 760 7607
-                    </span>
-                  </Typography>
-                </Stack>
-                <Stack direction={"row"} gap={1}>
-                  <IconAppSubHeader />
-                  <Typography className="text-sm">Tải ứng dụng</Typography>
-                </Stack>
-              </Stack>
+    <Container disableGutters>
+      <Box sx={{ px: { xs: 3, lg: 0 }, background: 'linear-gradient(270deg, #0D57C6 0%, #37CFFF 50.39%, #0F5ED6 100%)' }}>
+        <Stack
+          direction={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
+          <Stack direction={"row"} gap={1}>
+            <IconMoneySubHeader />
+            <Typography className="text-sm">
+              Nhập mã{" "}
+              <span className="text-yellow-primary font-bold">NEWBIE</span>{" "}
+              giảm ngay 10% cho lần đầu mua hàng
+            </Typography>
+          </Stack>
+          <Stack spacing={3} direction={"row"}>
+            <Stack direction={"row"} gap={1}>
+              <IconPhoneSubHeader />
+              <Typography className="text-sm text-white">
+                Hotline:{" "}
+                <span className="text-yellow-primary font-bold text-xs">
+                  0283 760 7607
+                </span>
+              </Typography>
             </Stack>
-          </Box>
-        </Container>
-      </div>
+            <Stack direction={"row"} gap={1}>
+              <IconAppSubHeader />
+              <Typography className="text-sm">Tải ứng dụng</Typography>
+            </Stack>
+          </Stack>
+        </Stack>
+      </Box>
+    </Container>
 
       {/* Main header */}
       <Container disableGutters>

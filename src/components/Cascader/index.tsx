@@ -51,6 +51,18 @@ export interface CascaderProps {
   hoverDelay?: number;
 }
 
+let products = Array(5).fill(0).map((item, index) => {
+  return ({
+    id: index + 1, 
+    name: 'Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)',
+    price_old: 329000,
+    price_new: 299000,
+    sale: 10,
+    hot: false,
+    image: `/image/pro-cate-${index + 1}.png`
+  })
+})
+
 const Cascader: React.FC<CascaderProps> = ({
   categories,
   value,
@@ -370,9 +382,9 @@ const Cascader: React.FC<CascaderProps> = ({
                   </Grid>
                 </Grid> */}
                 <Stack direction={"row"} spacing={2} alignItems={"center"}>
-                  {Array(5).fill(0).map((item, index) =>(
+                  {products.map((item, index) =>(
                     <Box key={index} sx={{width: '200px'}}>
-                      <ProductCard avatar={`/image/pro-cate-${index + 1}.png`} hot={false} button={false} />
+                      <ProductCard product={item} type="category"/>
                     </Box>
                   ))}
                 </Stack>
